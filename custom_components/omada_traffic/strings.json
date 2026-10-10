@@ -1,0 +1,83 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to your Omada controller",
+        "description": "The integration only reads from the controller. A viewer account is enough and is recommended.",
+        "data": {
+          "url": "Controller address",
+          "username": "Username",
+          "password": "Password",
+          "verify_ssl": "Check the controller's certificate"
+        },
+        "data_description": {
+          "url": "For example https://192.168.0.2 or https://192.168.0.2:8043",
+          "verify_ssl": "Leave off for a controller with its built-in self-signed certificate."
+        }
+      },
+      "site": {
+        "title": "Choose the site",
+        "data": { "site_id": "Site" }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach an Omada controller at that address.",
+      "invalid_auth": "The controller rejected that username or password.",
+      "no_sites": "That account cannot see any site on the controller."
+    },
+    "abort": {
+      "single_instance_allowed": "Omada Traffic is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Omada Traffic settings",
+        "menu_options": {
+          "add_plan": "Add an internet plan",
+          "edit_plan": "Edit an internet plan",
+          "remove_plan": "Remove an internet plan",
+          "people": "People in the household",
+          "general": "Start of the day"
+        }
+      },
+      "add_plan": {
+        "title": "Add an internet plan",
+        "data": {
+          "name": "Name",
+          "wan": "Internet line",
+          "quota_gb": "Monthly allowance (GB, 0 for none)",
+          "renewal_day": "Day of the month it renews",
+          "baseline_date": "Provider reading: date",
+          "baseline_gb": "Provider reading: GB used on that date"
+        },
+        "data_description": {
+          "wan": "The gateway WAN port this plan is on, as named in Omada. Usage is then the true internet traffic on that line.",
+          "baseline_date": "Optional. Use it when recording started part-way through a billing cycle."
+        }
+      },
+      "plan_details": {
+        "title": "Edit an internet plan",
+        "data": {
+          "name": "Name",
+          "wan": "Internet line",
+          "quota_gb": "Monthly allowance (GB, 0 for none)",
+          "renewal_day": "Day of the month it renews",
+          "baseline_date": "Provider reading: date",
+          "baseline_gb": "Provider reading: GB used on that date"
+        }
+      },
+      "edit_plan": { "title": "Which plan?", "data": { "plan": "Plan" } },
+      "remove_plan": { "title": "Remove which plan?", "data": { "plan": "Plan" } },
+      "people": {
+        "title": "People in the household",
+        "description": "Type a name and press Enter to add it. Devices can then be assigned to these people from the Traffic page.",
+        "data": { "people": "People" }
+      },
+      "general": {
+        "title": "Start of the day",
+        "data": { "day_start_hour": "Hour the day starts (0 = midnight, 6 = 6 AM)" }
+      }
+    }
+  }
+}

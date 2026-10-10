@@ -1,0 +1,17 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.db
+*.env
+env
+*.mp4
+
+# Private to one household: project notes, deployment and backup scripts,
+# device lists and reference material. These stay on the owner's machine.
+STATUS.md
+discovery.md
+clients-to-assign.csv
+deploy.sh
+backup/
+config-examples/
+design-reference/
